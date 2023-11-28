@@ -1,4 +1,4 @@
-train <- read.csv("spider_train.csv")
+train <- read.csv("data/spider_train.csv")
 
 
 plot(train$size, train$spider, xlab = "size", ylab = "Probability of being Malignant",
@@ -19,7 +19,7 @@ lines(av, pv, col = "blue", lwd = 2)
 
 #test 1
 
-test <- read.csv("spider_test.csv")
+test <- read.csv("data/spider_test.csv")
 
 p.test <- predict(logit.size, test, type = 'response')
 
@@ -63,5 +63,4 @@ B <- c(0.3,0.5,0.7)
 barplot(A, names.arg = B, xlab ="Cutoff", 
         ylab ="Senstivity", col ="blue", 
         main ="Variation of senstivities with cutoff")
-
 
